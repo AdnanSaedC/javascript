@@ -46,6 +46,10 @@ console.log(undefined<0);
 console.log(undefined==0);
 console.log(undefined>=0);
 
+//datatypes
+//null==undefined
+console.log(null==undefined);
+
 
 
 
