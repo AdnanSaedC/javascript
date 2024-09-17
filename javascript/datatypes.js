@@ -50,6 +50,10 @@ console.log(undefined>=0);
 //null==undefined
 console.log(null==undefined);
 
+//explicitly converted
+console.log("5"-1);
+
+
 
 
 
