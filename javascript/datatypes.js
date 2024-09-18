@@ -41,6 +41,7 @@ console.log(null>=0);
 console.log("hi");
 //so it is better to avoid comparison
 //btwn different datatypes
+//undefined is always false
 console.log(undefined>0);
 console.log(undefined<0);
 console.log(undefined==0);
