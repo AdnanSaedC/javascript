@@ -1,0 +1,54 @@
+//for each doesnot return anything
+//so we got filters here
+//it is also similar to forEach
+
+//return an array
+
+const myArr=[45,85,9,568,5784,65554,44,565,55465]
+
+let value=myArr.filter((num)=> num>1000)
+console.log(value)
+
+//another way
+//if you are adding curly then return  keyword mandatory
+value=myArr.filter((num)=>{
+    return num>1000
+})
+console.log(value);
+
+//let do this using for each
+//not returning anything
+//so
+value=myArr.forEach((num)=>{
+    if(num>1000){
+        return (num);
+    }
+})
+console.log(value);
+
+value=[]
+//making the empty again
+myArr.forEach((num)=>{
+    if(num>1000){
+        value.push(num);
+    }
+})
+console.log(value);
+
+//using map now not object wala
+let me=myArr.map((num)=>{
+    return num+10;
+                        }).map((num)=>{ return num-10});
+console.log(me);
+console.log("og array");
+
+console.log(myArr)
+
+//using filter now
+me=myArr.map((num)=>{
+    return num+10;
+                        }).filter((num)=>{ return num-10});
+console.log(me);
+console.log("og array");
+
+console.log(myArr)
