@@ -1,0 +1,14 @@
+https://excalidraw.com/#json=qrDW6GvRAnuJ0fEViYyuG,lnw6O27SOUmwgEuJNiqOwQ
+
+it is a synchronus language
+code gets executed line by line
+
+they are two types of code
+1-blocking code and non blocking code
+
+1-blocking code
+   blocks the entire flow like you cant do anything meanwhile
+   ex-file reading
+
+2-Non blocking code
+   allow us to do the task which we wants 
