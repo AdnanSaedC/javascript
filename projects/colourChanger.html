@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: grey;
+            display: flex;
+            justify-content: center;
+        }
+        span{
+            display: flex;
+        }
+        .button{
+            height: 100px;
+            width: 100px;
+            margin: 10px;
+            display: inline-block;
+        }
+        .yellow{
+            background-color: rgb(86, 86, 7);
+        }
+        .grey{
+            background-color: grey;
+        }
+        .green{
+            background-color: green;
+        }
+        .blue{
+            background-color: rgb(23, 23, 92);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="button yellow"></span>
+        <span class="button green"></span>
+        <span class="button grey"></span>
+        <span class="button blue"></span>
+    </div>
+    <script>
+        let body=document.querySelector("body")
+        const allElements=document.querySelectorAll(".button")
+        console.log(allElements);
+        allElements.forEach(function getClass(element){
+            //console.log(element)
+            let count=0;
+            element.addEventListener('click',function color(elementOfInterest){
+                //console.log(elementOfInterest)
+               // console.log(elementOfInterest.target)
+                let variable=element.getAttribute("class")
+                console.log(variable)
+                if(count==0){
+                    
+                    if(variable.includes("green")){
+                        count=1;
+                        body.style.backgroundColor="green"
+                    }
+                    else if(variable.includes("yellow")){
+                        count=1;
+                        body.style.backgroundColor="yellow"
+                    }
+                    else if(variable.includes("grey")){
+                        count=1;
+                        body.style.backgroundColor="grey"
+                    }
+                    else if(variable.includes("blue")){
+                        count=1;
+                        body.style.backgroundColor="aqua"
+                    }                    
+                }
+                else{
+                    count=0;
+                    body.style.backgroundColor="#212121"
+                }
+            })
+        })
+    </script>
+</body>
+</html>

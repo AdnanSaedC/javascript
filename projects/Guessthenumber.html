@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: grey;
+            display: flex;
+            justify-content: center;
+        }
+        span{
+            font-size: xxx-large;
+            display: block;
+        }
+        .heading{
+            display: block;
+            text-align: center;
+        }
+        input#submit{
+            height: 30px;
+            background-color: rgba(22, 200, 231, 0.267);
+            margin: 10px;
+            display: block;
+        }
+        .form{
+            text-align: center;
+            display: flex;
+            justify-content: center;
+
+        }
+        input{
+            height: 30px;
+            background-color: rgba(22, 200, 231, 0.267);
+            margin: 10px;
+            display: block;
+        }
+        .input{
+            display: flex;
+            justify-content: center;
+        }
+        .info{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="heading">
+            <h1>Guess the number</h1>
+            <h2>you have total 10 chance</h2>
+            <span>Enter the number 1-100</span>
+        </div>
+        <div class="form">
+            <div class="box">
+                <form id="form">
+                    <input id="number" type="number" required placeholder="number pleases">
+                    <div class="input">
+                        <input type="submit" id="submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="info">
+            <p id="guess">Previous guess</p>
+            <p id="attemp">No Of attempt left : </p>
+            <p id="detail">Welcome</p>
+        </div>
+    </div>
+    <script>
+        let random=((Math.trunc((Math.random()*100)+1)))
+        random=Math.round(random)
+        console.log(random);
+        
+        let form=document.querySelector("form");
+        let guess=document.querySelector("#guess");
+        let attempt=document.querySelector("#attemp")
+        let count=10;
+        attempt.innerHTML="Attemp left: " + count
+        let button=form.querySelector("#submit")
+        let userArray=[]
+        
+
+        
+        button.addEventListener("click",(element)=>{
+            element.preventDefault()
+            let value=parseInt(form.querySelector("#number").value)
+            console.log(value,random);
+            let display=document.querySelector("#detail");
+            
+            if(count>0){
+                userArray.push(value)
+                console.log(userArray)
+                guess.innerHTML="Previous guesses: "+userArray.join(",");
+                count--;
+                if(count==0){
+                    attempt.innerHTML="Last attempt"
+                }
+                else{
+                    attempt.innerHTML="No of attempt left: "+count;
+                }
+                
+                if(value>0){
+                    if(value>random){
+                        display.innerHTML="Number is lesser";
+                    }
+                    else if(value<random){
+                        display.innerHTML="Number is greator";
+                    }
+                    else if(value==random){
+                        display.innerHTML="Congragulations you got it man<br>Start again"
+                        endgame()
+                    }
+                }
+            }
+            else{
+                endgame()
+                display.innerHTML="All attempts are over<br>Start again"}
+        })
+
+        function endgame(){
+            count=10;
+            guess.innerHTML="empty the number was: "+random;
+            random=((Math.trunc((Math.random()*100)+1)))
+        random=Math.round(random)
+            userArray=[]
+        }
+    </script>
+</body>
+</html>

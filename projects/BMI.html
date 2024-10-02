@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: grey;
+            display: flex;
+            justify-content: center;
+        }
+        .heading{
+            display: block;
+        }
+        input{
+            padding: 2px;
+            margin-left: 5px;
+            border-radius: 10px;
+        }
+        .calculate{
+            display: flex;
+            justify-content: center;
+        }
+        .calculate input{
+            padding: 5px;
+            width: 40%;
+        }
+        </style>
+</head>
+<body>
+    <div class="box">
+    <div class="heading">
+        <h1>BMI Calculator</h1>
+    </div>
+    <div class="getInfi">
+        <form>
+            <label for="height" >Height in cm</label>
+            <input id="height" type="number" placeholder="height" required>
+            <br><br>
+            <label  for="weight">weight in kg</label>
+            <input id="weight"  type="number" placeholder=" weight" required>
+            <br><br>
+            
+            <div class="calculate">
+                <input id="button" type="submit" value="Calculate">   
+            </div>
+        </form>
+    </div>
+    <div class="output">
+        <p></p>
+    </div>
+</div>
+<script>
+    let form=document.querySelector("form")
+    let button=document.querySelector("#button");
+    let value=0
+    let p=document.querySelector("p")
+    
+
+button.addEventListener('click',(element)=>{
+    let height=form.querySelector("#height").value;
+    let weight=form.querySelector("#weight").value;
+    height=parseFloat(height)
+    weight=parseFloat(weight)
+    //this is important because we need the values at the time
+    //of fetch
+    console.log(typeof height,typeof weight,height,weight)
+    
+    if((height > 0 && height!=NaN && weight > 0 && weight!=NaN)){
+        value=weight/((height*height)/10000).toFixed(2);
+        //console.table(height,weight,value,Math.pow(height,2))
+    }
+    else{
+        p.innerHTML="wrong input"
+        console.log(height < 0,height!=NaN,weight < 0,weight!=NaN)
+    }
+        if(value!=0){
+            if(value<=18.4){
+                p.innerHTML="UnderWeight"+value
+            }
+            else{
+                p.innerHTML="norm"+value
+            }
+        }
+    })
+</script>
+</body>
+</html>
