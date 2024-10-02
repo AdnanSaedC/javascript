@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: grey;
+        }
+        li{
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>adnan</h2>
+    <ul id="ull">
+        <li>
+            <img src="./qr.png" id="owl" alt="qr">
+        </li>
+        <li>
+            <img src="./qr_img.png" alt="qr">
+        </li>
+        <li id="google"><a href="https://www.google.com">google</a></li>
+    </ul>
+    <script>
+        // Comment out many stuff to know how and why there are here
+        
+        
+        
+        // //thimg to study
+        // /***
+        //  *  type,timestamp,defaultprevented
+        //  * target, toElement, srcElement,currentTarget
+        //  * clientX,clientY,ScreenX ,screen Y
+        //  * alt key,ctrl key,shift key,keycode
+        //  * */
+        
+        
+        
+        // document.getElementById("ull").addEventListener("click",(element)=>{
+        //     console.log("false wala");
+        //     console.log("any one qr got selected")
+        // },false)
+        // document.getElementById("owl").addEventListener("click",(element)=>{
+        //     console.log("false wala");
+        //     console.log("first qr")
+        // },false)
+        // //default is false in case third parameter
+        // //since false first child will be called then parent 
+        // //first qr-any one qr
+        // //this is known as bubbling
+
+        // //now capturing
+     
+        
+        // document.getElementById("ull").addEventListener("click",(element)=>{
+        //     console.log("true wala");
+        //     console.log("any one qr got selected")
+        // },true)
+        // document.getElementById("owl").addEventListener("click",(element)=>{
+        //     console.log("true wala");
+        //     console.log("first qr")
+        // },true)
+        // //while checking comment one thing and check the another
+        // //to understand better
+
+        // //how to stop propogation
+
+        // document.getElementById("owl").addEventListener("click",(element)=>{
+        //     console.log("true wala with stop");
+        //     console.log("first qr")
+        //     element.stopPropagation()
+        // },true)
+
+        // //google
+        // //our task is to prevent user from going to google
+        document.getElementById("google").addEventListener('click',function(element){
+            element.preventDefault();
+            //stoping bubbling since we are default mode(false)
+            element.stopPropagation();
+            //the log is due to we are selected the entire ul element
+        })
+
+
+
+        //target
+        document.querySelector("ul").addEventListener("click",(element)=>{
+            console.log(element.target)
+            //remember when you click on list entire ul gets selected
+        })
+
+
+        //target.parentnode
+        document.querySelector("ul").addEventListener("click",(element)=>{
+            console.log(element.target.parentNode.parentNode)
+            //remember when you click on list entire ul gets selected
+            //remember to click on list dot place
+        })
+
+
+        //remove
+        //removing the image
+        // let image=document.querySelector("ul")
+        // image.addEventListener("click",(element)=>{
+        //     element.target.parentNode.remove()
+        //     //if only element then onluy image will be removed the li
+        //     //remain the same
+        // })
+        
+        // removeChild
+        // another ways
+        // let imagee=document.querySelector("ul")
+        // imagee.addEventListener("click",(element)=>{
+        //     element.target.parentNode.parentNode.removeChild(element.target.parentNode)
+        //     //if only element then onluy image will be removed the li
+        //     //remain the same
+        //     //biggest problem in this is when you click on ul since(display:block)
+        //     //entire ul fades away
+        //     //sol down below
+        // })
+        
+        //tagname
+        let imagee=document.querySelector("ul")
+        imagee.addEventListener("click",(element)=>{
+            console.log(element.target.tagName)
+
+            //only google will not work since we have stoped the propogartion
+            if(element.target.tagName=="IMG"){
+            //element.target.parentNode.parentNode.removeChild(element.target.parentNode)
+            //that will also but this one is easy
+            element.target.parentNode.remove()
+
+        }})
+
+    </script>
+</body>
+</html>
