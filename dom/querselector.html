@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: grey;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="head" id="first">Hai<span style="display: none"> adjkjjdj</span></h1>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <input type="password">
+    <ul>
+        <li>fjfjf</li>
+        <li>f</li>
+        <li>r</li>
+        <li>ff</li>
+        <li>ffffr</li>
+    </ul>
+    <script>
+        const x=document.querySelector("h1");
+        document.querySelector("h1").innerHTML=x.innerText+"saed";
+        console.log(x.innerText);//give only what is in the display
+        console.log(x.textContent);//displays everything
+        const z=document.querySelector('input[type="password"]');
+        z.style.backgroundColor="green";
+        z.value="adnan";
+        var t=document.querySelector('p:first-child')
+        t.style.color="blue";
+
+    </script>
+</body>
+</html>
+<!--
+to know about the web page
+console.log(window)
+console.dir(document)
+consol.log(window.document)=console.log(document)
+
+document.location
+documnet.getElementById.getAttribute
+                        .id
+                        .className
+                        .class will not work it is different
+                        
+when you set an attribute usinh html it overrides
+if you want two
+document.querySelector('h1').setAttribute('class','hwllo heading');
+to add css document.querySelector('h1').setAttribute('class','hwllo heading').style.color:"green";
+
+how to select multiple items
+const arr=document.querySelectorAll('li');
+arr[0].style.color="yellow";
+
+applicable for even one tag
+
+//converting to arrayFunction
+A capital
+
+const arra=Array.from('arr');
+applying foreach
+arr.forEach((li)=>{
+    li.style.color="orange";
+})
+-->

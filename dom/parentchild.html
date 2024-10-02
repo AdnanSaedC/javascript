@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: grey;
+            font-size: xx-large;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <!--jdjdjdkkd-->
+        <div class="child">Mon</div>
+        <div class="child">Tues</div>
+        <div class="child">Wed</div>
+        <div class="child">Thurs</div>
+    </div>
+</body>
+<script>
+    let parent=document.querySelector(".parent");
+    console.log(parent)
+    console.log(parent.children)
+    console.log(parent.children.length)
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);
+        
+    }
+    console.log(parent.firstElementChild);
+    console.log(parent.lastElementChild);
+
+    let child=document.querySelector(".child");
+    console.log(child)
+    console.log(child.parentElement)
+    console.log(child.nextElementSibling);
+    console.log(child.nextElementSibling.nextElementSibling);
+
+    console.log("nodes: ",parent.childNodes);
+    //here it will treat next line as text
+    //\n\n==\n==nextLine
+</script>
+</html>
+</html>

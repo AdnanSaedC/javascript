@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: grey;
+            font-size: xx-large;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        //creting a div element
+        let div=document.createElement("div")
+        console.log(div);
+        div.className="divv"
+        div.id="divv"
+        //you can also use functions like
+        div.id=Math.random()
+        div.setAttribute("href","www.google.com");
+        div.style.height="40px";
+        div.style.width="40px";
+        div.style.backgroundColor="green";
+
+        div.innerText="adnan"
+        //this is not a good practice since it overrides
+
+        let text=document.createTextNode(" adnan")
+        div.appendChild(text);
+
+        document.body.appendChild(div)
+
+        //till now nothing will visible
+
+
+
+    </script>
+    
+</body>
+</html>

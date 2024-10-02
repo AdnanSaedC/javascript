@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: grey;
+            font-size: xx-large;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>adnan</li>
+        <li>creted as such</li>
+        <li>creted as such</li>
+        <li>creted as such</li>
+        <li>creted as such</li>
+        <li>creted as such</li>
+        <li>creted as such</li>
+        <li>creted as such</li>
+    </ul>
+    <script>
+        let addList=(listName)=>{
+            let l1=document.createElement("li")
+            l1.innerText=listName
+            //documnet.body.ul.appendChild(l1)
+            //this will not work since you cant access directly
+            let ul=document.querySelector("ul");
+            //if you use getElementByTagName/class/id
+            //you have to include the array position its mandatory
+            ul.appendChild(l1)
+        }
+        addList("java")
+        addList('gmnui')
+
+        function optimizedWay(lanName){
+            let l1=document.createElement("li")
+            //initially it was traversing the entire tree
+            //that was not a best scenario so
+            l1.appendChild(document.createTextNode(lanName))
+            let ul=document.querySelector("ul");
+            ul.appendChild(l1)
+        
+        }
+        optimizedWay("c++")
+
+        //now how to replace element
+        let element=document.querySelector("li:nth-child(2)");
+        element.innerHTML="4585";
+        element.innerText="485";
+        element.outerHTML="<li>ok hahaha</li>"
+        element.textContent="4585285";
+        const newEle=document.createElement("li");
+        newEle.appendChild(document.createTextNode("doggy"));
+        console.log(element.replaceWith(newEle));
+        console.log(newEle.outerHTML)
+        console.log(element.outerHTML)
+        //element got replaced by newEle
+
+        //now it both element and newEle got removed
+        //so assigning again to make changes
+        element=document.querySelector("li:nth-child(2)");
+        element.outerHTML="<li>hhfhfhf</li>"
+
+        //remove
+        let ele=document.querySelector('li:last-child')
+        ele.remove()
+    </script>
+</body>
+</html>

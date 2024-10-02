@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: grey;
+            font-size: xx-large;
+        }
+        ul::first-letter{
+            color:red;
+        }
+        ul li:first-child{
+            color:greenyellow;
+        }
+        
+        ul li:last-child{
+            color:green;
+        }
+        ul p:first-of-type{
+            color:whitesmoke;
+        }
+        ul p:last-of-type{
+            color:rgb(203, 70, 70);
+        }
+        ul li:nth-child(4
+        ){
+            color:rgb(10, 2, 2);
+            /**
+            here the parameter can be even or odd
+            ul li:nth-child(even)
+            ul li:nth-child(odd)
+            ul li:nth-child(2n(which is even))
+            ul li:nth-child(2n+1(which is odd))
+            */
+            }
+        ul li:nth-last-child(1){
+            color: yellow;
+            /**
+            starts from one
+            */
+        }
+        ul li:nth-last-of-type(3){
+            color: yellowgreen;
+            /**
+            starts from one
+            */
+        }
+        body :only-of-type{
+        color: rgb(36, 188, 132);
+        /***
+        it will change those element which are only
+        one like h1,ul
+        */
+        }
+        body :only-child{
+            color:aqua
+            /**
+            it will change those which has a 
+            single color
+            */
+        }
+        body :empty{
+            width:400px;
+            background-color: violet;
+            /**
+            it will effect those in which nothing is written
+            */
+        }
+        body :not(p){
+            color: rgb(40, 7, 229);
+            /***
+            except p change everything
+            */
+        } 
+    </style>
+    </head>
+    <body>
+    <div class="class">
+
+        <h1>hjfjfffflfl</h1>
+    </div>
+    <ul class="lists">
+        <li>Adnan</li>
+        <li>Adnnn</li>
+        <p>dghdhdhdddh</p>
+        <li>Adnan</li>
+        <li>Adnan</li>
+        <li></li>
+    </ul>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
+    <script>
+        let addList=(listName)=>{
+            let l1=document.createElement("li")
+            l1.innerText=listName
+            //documnet.body.ul.appendChild(l1)
+            //this will not work since you cant access directly
+            let ul=document.querySelector("ul");
+            //if you use getElementByTagName/class/id
+            //you have to include the array position its mandatory
+            ul.appendChild(l1)
+        }
+        addList("java")
+        addList('gmnui')
+
+        function optimizedWay(lanName){
+            let l1=document.createElement("li")
+            //initially it was traversing the entire tree
+            //that was not a best scenario so
+            l1.appendChild(document.createTextNode(lanName))
+            let ul=document.querySelector("ul");
+            ul.appendChild(l1)
+        
+        }
+        optimizedWay("c++")
+
+        </script>
+    </body>
+</html>
