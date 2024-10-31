@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: grey;
+        }
+        .display{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="display">
+        <h1>press the key and see the magic</h1>
+    </div>
+</body>
+<script>
+    let div=document.querySelector(".display")  
+
+    window.addEventListener("keypress",(keyPresses)=>{
+        div.innerHTML=`
+        <table>
+            <tr border="1px" cellpadding="5px" cellspacing="4px"></tr>
+                <th>key presses</th>
+                <th>keycode</th>
+                <th>name</th>
+            <tr>
+                <th>${keyPresses.key===" " ? "space":keyPresses.key}</th>
+                <th>${keyPresses.keyCode}</th>
+                <th>${keyPresses.code}</th>
+            </tr>
+        </table>  
+        `
+    })
+</script>
+</html>

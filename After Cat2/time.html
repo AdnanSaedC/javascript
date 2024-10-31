@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: grey;
+            display: flex;
+            justify-content: center;
+        }
+        .time{
+            display: block;
+            
+        }
+        .clock{
+            height: 40px;
+            width: 80px;
+            margin-top: 10px;
+            border-radius: 10px;
+            background-color: rgba(95, 33, 10, 0.549);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="time">
+        <div class="baner">Local Time</div>
+        <div class="clock">
+        </div>
+    </div>
+    <script>
+        let clock=document.querySelector(".clock");
+        
+        //1000ms=1 sec
+        setInterval(()=>{
+            //remember date should be inside
+            let date=new Date();
+            //clock.appendChild(document.createTextNode(date.toLocaleTimeString()))
+            clock.innerHTML=date.toLocaleTimeString('en-US');
+        },1000)
+    </script>
+</body>
+</html>

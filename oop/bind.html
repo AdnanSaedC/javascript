@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Click Me</button>
+    <script>
+        class user {
+            constructor(username){
+                this.username=username;
+            }
+            print(){
+                console.log("button clicked");
+                console.log(`${this.username}`);
+                console.log(this);
+                
+            }
+        }
+        //now what we want is to display the username of a user if he clickes the button
+        const obj1=new user("adnan")
+        let button=document.querySelector("button")
+        button.addEventListener("click",obj1.print)
+        //you will get undefined 
+        //because you are passing a reference not calling it actually
+        //so the solution is bind
+        
+        //here like call you pass the refrence tooo
+        //you can comment the first one and check
+        button.addEventListener("dblclick",obj1.print.bind(obj1))
+    </script>
+</body>
+</html>

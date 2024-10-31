@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: grey;
+        }
+    </style>
+</head>
+<body>
+    <h1>Adnan</h1>
+    <p>he is the best guy out there</p>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <script>
+        function randomNUmber(){
+            return (Math.floor(((Math.random())*100)%16))
+        }
+        function generatingHexCode(num){
+            switch (num) {
+                case 0:
+                    return "0"
+                    break;
+                case 1:
+                    return "1"
+                    break;
+                case 2:
+                    return "2"
+                    break;
+                case 3:
+                    return "3"
+                    break;
+                case 4:
+                    return "4"
+                    break;
+                case 5:
+                    return "5"
+                    break;
+                case 6:
+                    return "6"
+                    break;
+                case 7:
+                    return "7"
+                    break;
+                case 8:
+                    return "8"
+                    break;
+                case 9:
+                    return "9"
+                    break;
+                case 10:
+                    return "A"
+                    break;
+                case 11:
+                    return "B"
+                    break;
+                case 12:
+                    return "C"
+                    break;
+                case 13:
+                    return "D"
+                    break;
+                case 14:
+                    return "E"
+                    break;
+                case 15:
+                    return "F"
+                    break;
+                default:
+                    console.log("wrong number");
+                    break;
+            }
+        }
+        
+        let startFunction=function(){
+            let newColourCode="#"
+            for(let i=0;i<6;i++){
+                let commomVariable=randomNUmber()
+                //newColourCode=newColourCode+(generatingHexCode(commomVariable))
+
+                //another way
+                let hex='0123456789ABCDEF'
+                newColourCode=newColourCode+(hex[commomVariable])
+            }
+            let body=document.querySelector("body")
+            console.log(newColourCode);
+            
+            body.style.backgroundColor=newColourCode
+        }
+        
+        let commomVariable=0
+        function repetingStartFunctoion(){
+            console.log("hi");
+            if(commomVariable==0){
+            commomVariable=setInterval(startFunction,1000)}
+            else{
+                console.log("already running")
+            }
+        }
+
+        function stopFunction(){
+            console.log("stopped")
+            clearInterval(commomVariable)
+            let body=document.querySelector("body")
+            console.log("stopped")
+
+            //this will not work as it needs only functions
+            setTimeout(()=>{
+                body.style.backgroundColor="#212121"
+            },2000)
+            commomVariable=0
+            console.log("stopped")
+            
+        }
+
+
+
+        let startButton=document.querySelector("#start")
+        startButton.addEventListener("click",repetingStartFunctoion)
+
+        let endButton=document.querySelector("#stop")
+        endButton.addEventListener("click",stopFunction)
+
+
+
+    </script>
+</body>
+</html>

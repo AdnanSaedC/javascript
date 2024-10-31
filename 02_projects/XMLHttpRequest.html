@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: #212121;
+        color: grey;
+    }
+</style>
+<body>
+    <!--
+        api.github/users/hiteshCoundry(username)
+        json formatter(use tree to understand API)
+    -->
+</body>
+<h1>adnan</h1>
+<img style="border-radius: 50%;">
+<script>
+    //you have to create an object
+    const reqUrl='https://api.github.com/users/hiteshchoudhary'
+
+    //creting a new object
+    const xhr=new XMLHttpRequest();
+    console.log("before open:"+xhr.readyState);
+    //we have just created the object so the ready state will be zero here
+    //its just your getting a letter
+
+    xhr.open('GET',reqUrl)
+    //here you rae telling where to go okay
+    //hence the ready state is one
+    console.log("after open: "+xhr.readyState);
+
+    //it will print error because it has no info
+    //its didnt went to the actual address
+    console.log(xhr);
+
+    //now we have not entered the function thus the
+    //proof is ready state is still one here
+    console.log("before "+xhr.readyState);
+
+    //here iam declaring what operation has to be done 
+    //we you get a reply
+
+    //here
+    //iam telling if there is a change in ready state
+    //which will happen only when you send the request
+    //do this opertion
+    xhr.onreadystatechange=function(){
+
+        //here you will get 2 3 and 4 not one
+        //because readyStategot changed
+        //read from line no 65
+        console.log(xhr.readyState);
+
+        //now the request has got the response
+        if(xhr.readyState===4){
+
+            //why four because now only the entire stuff
+            //is received
+            const data=JSON.parse((this.responseText))
+            console.log(data)
+            console.log(data.followers)
+            document.querySelector("img").setAttribute("src",'https://avatars.githubusercontent.com/u/11613311?v=4')
+        }
+    }
+    console.log("sending: "+xhr.readyState);
+    //look ready state is still one
+    
+    xhr.send()
+    console.log("sent: "+xhr.readyState);
+    //now ready state is not two since javascript went on to execute
+    //javaScript is asynchoronous language it just sent to browser
+    //and started to execute this line    
+</script>
+</html>
