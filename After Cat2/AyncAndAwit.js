@@ -1,3 +1,18 @@
+/***
+await is used to either get the value from a promise whose state is not initial, and async is to tell the compiler that this function will return a promise
+. A promise is nothing but its value will be available later.
+So it tells the compiler that its value will be available later, and await is to stop at that particular line and wait for the value.
+
+mine og version 
+o awit is used to enther grt the value from a promise who state is not initial 
+and aync is to tell the compiler that this function will return a promise and promise is 
+noting but its value will be avilable later so it tells the compiler that its value will be avalible 
+later and await is to stop at that particular line and wait for the value just correct the spelling mistakes
+*/
+
+
+
+
 //lets first understand why it even exits
 
 /**
@@ -41,3 +56,4 @@ async function consumingPromise(){
     }
 }
 consumingPromise()
+
