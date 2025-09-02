@@ -1,3 +1,20 @@
+/**
+ promises is nothing but a function which takes two parameters
+ resolve - accept and give the data in proper format
+ reject - reject it and give the eror message
+
+ a promise has two condition if this resolve and if this reject
+ .then() is used to to do the thing for resolve
+ .catch() is for reject part
+
+ both the function takes call back(function) as parameter or the content inside the ()
+
+ if you want to return data in the then/catch part you can do it and catch
+ it using .then()
+*/
+
+
+
 //promises tells you whether a thing got completed or not
     //and also returns its value
 
@@ -67,4 +84,5 @@ promiseFour.then(()=>{
  * functions like setTimeout,setInterval,setImmediate gets executed
  * basically those which involves time,DOM like click scroll load i/o opeartions
  */
+
 
